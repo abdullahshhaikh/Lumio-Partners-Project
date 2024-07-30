@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Order Summaries">
+        <template if:true={orders}>
+            <lightning-datatable key-field="orderId" data={orders} columns={columns} hide-checkbox-column
+                show-row-number-column>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <div class="slds-box slds-theme_error">
+                <p>Error loading orders: {error}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>
